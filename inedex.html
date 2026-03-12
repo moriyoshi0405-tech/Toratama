@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>虎のたましい人魚の涙</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
 
@@ -10,28 +14,36 @@
 
 body{
 margin:0;
-background:transparent;
+background:#f5f5f5;
 font-family:'Zen Kaku Gothic New',sans-serif;
 display:flex;
 justify-content:center;
 align-items:center;
+height:100vh;
 }
 
-/* リールカード */
+/* カード */
 
 .card{
 
 width:320px;
 height:480px;
+
 background:white;
+
 border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,0.12);
+
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+
 text-align:center;
+
 padding:30px;
+
 box-sizing:border-box;
 
 }
@@ -41,26 +53,39 @@ box-sizing:border-box;
 .text{
 
 font-size:20px;
+
 line-height:1.6;
+
 opacity:0;
+
 transform:translateY(10px);
-transition:.8s;
+
+transition:0.8s;
 
 }
 
 .text.show{
+
 opacity:1;
+
 transform:translateY(0);
+
 }
 
 .big{
+
 font-size:24px;
+
 font-weight:700;
+
 }
 
 .quote{
-font-style:italic;
+
 font-size:18px;
+
+font-style:italic;
+
 }
 
 /* 書影 */
@@ -68,45 +93,63 @@ font-size:18px;
 .book{
 
 display:none;
+
 flex-direction:column;
+
 align-items:center;
 
 }
 
 .book img{
 
-width:140px;
+width:150px;
+
 border-radius:6px;
-box-shadow:0 12px 30px rgba(0,0,0,0.2);
+
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 
 }
 
 .title{
+
 margin-top:10px;
+
 font-weight:700;
+
 }
 
 .author{
+
 font-size:13px;
-opacity:.6;
+
+opacity:0.6;
+
 }
 
 /* ボタン */
 
 .button{
 
-margin-top:12px;
+margin-top:14px;
+
 padding:10px 18px;
+
 border-radius:20px;
+
 background:black;
+
 color:white;
+
 text-decoration:none;
+
 font-size:13px;
+
 font-weight:700;
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -120,10 +163,15 @@ font-weight:700;
 <img src="https://m.media-amazon.com/images/I/61HB2U1WHFL._SL1411_.jpg">
 
 <div class="title">虎のたましい人魚の涙</div>
+
 <div class="author">くどうれいん</div>
 
-<a class="button" href="https://aged-trouser-c00.notion.site/305f89d90a638091962ef074a4d62b50" target="_blank">
+<a class="button"
+href="https://aged-trouser-c00.notion.site/305f89d90a638091962ef074a4d62b50"
+target="_blank">
+
 感想記事を読む
+
 </a>
 
 </div>
@@ -157,7 +205,9 @@ const scenes=[
 ]
 
 let index=0
+
 const text=document.getElementById("text")
+
 const book=document.getElementById("book")
 
 function showScene(){
@@ -165,6 +215,7 @@ function showScene(){
 if(index < scenes.length){
 
 book.style.display="none"
+
 text.style.display="block"
 
 text.classList.remove("show")
@@ -172,6 +223,7 @@ text.classList.remove("show")
 setTimeout(()=>{
 
 text.innerHTML=scenes[index]
+
 text.classList.add("show")
 
 index++
@@ -181,6 +233,7 @@ index++
 }else{
 
 text.style.display="none"
+
 book.style.display="flex"
 
 }
@@ -194,4 +247,5 @@ setInterval(showScene,3000)
 </script>
 
 </body>
+
 </html>
